@@ -18,13 +18,13 @@ void loop(FILE *file, char *string)
 	while ((line_read = getline(&string, &len, file)) != -1)
 	{
 		line_number++;
-		opcode = strtok(&line_buff, "\t\n"); 
+		opcode = strtok(&string, "\t\n"); 
 
 		if (opcode == NULL || strlen(opcode) == 0)
 		{
 			continue;
 		}
-		fprint(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 		exit(EXIT_FAILURE);
 	}
 }

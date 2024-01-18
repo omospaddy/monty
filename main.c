@@ -29,7 +29,7 @@ int main(int ac, char *av[])
 	loop(file, string);
 	execute(string, stack);
 	free_list(string);
-i	fclose(fd);
+	fclose(file);
 	return (0);
 }
 
